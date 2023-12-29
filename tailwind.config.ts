@@ -7,7 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        primary: ["Fira Code"]
+      },
       colors: {
+        primary: '#011627',
+        secondary: '#1E2D3D',
         green: {
           50: '#30AF5B',
           90: '#292C27',
@@ -16,7 +21,7 @@ module.exports = {
           10: '#EEEEEE',
           20: '#A2A2A2',
           30: '#7B7B7B',
-          50: '#585858',
+          50: '#607B96',
           90: '#141414',
         },
         orange: {
@@ -50,4 +55,5 @@ module.exports = {
     },
   },
   plugins: [],
+  darkMode: "class"
 };
