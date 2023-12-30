@@ -13,4 +13,12 @@
       @apply text-white border-b-yellow-500;
     }
   }
+
+  .nav-link-mobile{
+    @apply p-2 px-4 text-gray-50 border-b border-secondary hover:border-b-yellow-500;
+
+    &.active{
+      @apply text-white border-b-yellow-500;
+    }
+  }
 }
