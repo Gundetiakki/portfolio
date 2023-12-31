@@ -18,7 +18,7 @@
     @apply p-2 px-4 text-gray-50 border-b border-secondary hover:border-b-yellow-500;
 
     &.active{
-      @apply text-white dark:text-primary border-b-yellow-500;
+      @apply text-primary dark:text-white border-b-yellow-500;
     }
   }
 
