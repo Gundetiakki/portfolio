@@ -10,7 +10,7 @@
     @apply p-2 px-4 text-gray-50 md:block cursor-pointer border-r border-b-2 border-b-transparent border-secondary hover:border-b-yellow-500 hidden;
 
     &.active{
-      @apply text-white border-b-yellow-500;
+      @apply text-primary dark:text-white border-b-yellow-500;
     }
   }
 
@@ -18,7 +18,11 @@
     @apply p-2 px-4 text-gray-50 border-b border-secondary hover:border-b-yellow-500;
 
     &.active{
-      @apply text-white border-b-yellow-500;
+      @apply text-white dark:text-primary border-b-yellow-500;
     }
+  }
+
+  .footer-link{
+    @apply border-x lg:border-r border-secondary py-2 px-4 text-gray-50 border-t-2 border-t-transparent hover:border-t-yellow-500;
   }
 }

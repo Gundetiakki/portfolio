@@ -14,7 +14,7 @@ module.exports = {
         primary: '#011627',
         secondary: '#1E2D3D',
         green: {
-          50: '#30AF5B',
+          50: '#43D9AD',
           90: '#292C27',
         },
         gray: {
@@ -22,17 +22,19 @@ module.exports = {
           20: '#A2A2A2',
           30: '#7B7B7B',
           50: '#607B96',
+          60: '#E5E9F0',
           90: '#141414',
         },
         orange: {
-          50: '#FF814C',
+          50: '#E99287',
         },
         blue: {
-          70: '#021639',
+          70: '#4D5BCE',
         },
         yellow: {
           50: '#FEC601',
         },
+        gradient: '#43D9AD17' 
       },
       backgroundImage: {
         'bg-img-1': "url('/img-1.png')",

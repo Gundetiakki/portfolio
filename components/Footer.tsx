@@ -4,37 +4,35 @@ import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 function Footer() {
   return (
-    <div className="flex items-center justify-between border-t border-secondary">
+    <footer className="flex items-center justify-between border-t border-secondary">
       <div className="flex-shrink-0 py-2 px-4 text-gray-50 lg:border-r border-secondary">
         find me in:
       </div>
 
       <div className="flex lg:w-full justify-between">
         <div className="flex">
-          <div className="border-x lg:border-r border-secondary py-2 px-4 text-gray-50">
-            {/* <Link href={"/"}> */}
+          <Link href={"https://twitter.com/AGundeti"} target='_blank' className="footer-link">
             <FaTwitter size={20} />
-            {/* </Link> */}
-          </div>
-          <div className="border-r border-secondary py-2 px-4 text-gray-50">
-            {/* <Link href={"/about"} className={`nav-link`}> */}
+          </Link>
+          <Link href={"https://www.linkedin.com/in/aakash-gundeti-031131106/"} target='_blank' className="footer-link">
             <FaLinkedin size={20} />
-            {/* </Link> */}
-          </div>
-          <div className="border-r border-secondary py-2 px-4 text-gray-50">
-            {/* <Link href={"/projects"} className={`nav-link`}> */}{" "}
+          </Link>
+          <Link href={"https://www.instagram.com/aakashg345/"} target='_blank' className="footer-link">
             <FaInstagram size={20} />
-            {/* </Link> */}
-          </div>
+          </Link>
         </div>
-        <div className="hidden py-2 px-4 lg:flex items-center border-l border-secondary text-gray-50">
-          {/* <Link href={"/contact-me"} className="nav-link border-l border-r-0"> */}
-          <span>@Gundetiakki</span>
-          <FaGithub size={20} />
-          {/* </Link> */}
+        <div className="hidden py-2 px-4 lg:flex items-center footer-link border-r-0">
+          <Link
+            href={"https://github.com/aakash-gundeti"}
+            target="_blank"
+            className="flex"
+          >
+            <span className="mr-2">@aakash-gundeti</span>
+            <FaGithub size={20} />
+          </Link>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 

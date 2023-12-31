@@ -1,30 +1,28 @@
 'use client';
 
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 import ThemeSwitch from "./ThemeSwitch";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { usePathname } from "next/navigation";
+import { NavContext } from "@/app/providers";
 
-interface Props {
-  nav:  boolean,
-  openNav: () => void,
-  closeNav: () => void
-}
-
-const Navbar = ({nav, openNav, closeNav} : Props) => {
+const Navbar = () => {
   const pathname = usePathname();
 
+  const {nav, openNav, closeNav} = useContext(NavContext);
   const navAnimation = nav ? 'translate-y-0' : 'translate-y-[-100%]';
   console.log(pathname);
+
   return (
     <>
-      <nav className="border-b border-secondary bg-primary relative z-[1000]">
+      <nav className="border-b border-secondary bg-white dark:bg-[#011627] relative z-[1000]">
         <div className="flex items-center justify-between">
-          <div className="flex-shrink-0 md:w-1/4 py-2 px-4 text-gray-50 md:border-r border-secondary">
+          <div className="flex-shrink-0 flex items-center md:w-1/4 py-2 px-4 text-gray-50 md:border-r border-secondary">
             <Link href={"/"} className="mr-2">
               aakash-gundeti
             </Link>
+            {/* <ThemeSwitch /> */}
           </div>
 
           <div className="block md:hidden py-2 px-4 text-gray-50">
@@ -41,20 +39,36 @@ const Navbar = ({nav, openNav, closeNav} : Props) => {
 
           <div className="hidden md:flex md:w-3/4 justify-between">
             <div className="flex">
-              <Link href={"/"} className={`nav-link ${pathname === '/' ? 'active' : ''}`}>
+              <Link
+                href={"/"}
+                className={`nav-link ${pathname === "/" ? "active" : ""}`}
+              >
                 _hello
               </Link>
-              <Link href={"/about"} className={`nav-link ${pathname === '/about' ? 'active' : ''}`}>
+              <Link
+                href={"/about"}
+                className={`nav-link ${pathname === "/about" ? "active" : ""}`}
+              >
                 {" "}
                 _about-me{" "}
               </Link>
-              <Link href={"/projects"} className={`nav-link ${pathname === '/projects' ? 'active' : ''}`}>
+              <Link
+                href={"/projects"}
+                className={`nav-link ${
+                  pathname === "/projects" ? "active" : ""
+                }`}
+              >
                 {" "}
                 _projects{" "}
               </Link>
             </div>
             <div className="flex">
-              <Link href={"/contact-me"} className={`nav-link border-l border-r-0 ${pathname === '/contact-me' ? 'active' : ''}`}>
+              <Link
+                href={"/contact-me"}
+                className={`nav-link border-l border-r-0 ${
+                  pathname === "/contact-me" ? "active" : ""
+                }`}
+              >
                 _contact-me
               </Link>
             </div>
@@ -62,19 +76,38 @@ const Navbar = ({nav, openNav, closeNav} : Props) => {
         </div>
       </nav>
 
-      <div id="mobile-menu" className={`${navAnimation} bg-primary w-full fixed top-10 flex h-full flex-col transform duration-300 transition-all`}>
-        <Link href={"/"} className={`nav-link-mobile ${pathname === '/' ? 'active' : ''}`}>
+      <div
+        id="mobile-menu"
+        className={`${navAnimation} bg-primary w-full fixed lg:hidden top-10 flex h-full flex-col transform duration-300 transition-all`}
+      >
+        <Link
+          href={"/"}
+          className={`nav-link-mobile ${pathname === "/" ? "active" : ""}`}
+        >
           _hello
         </Link>
-        <Link href={"/about"} className={`nav-link-mobile ${pathname === '/about' ? 'active' : ''}`}>
+        <Link
+          href={"/about"}
+          className={`nav-link-mobile ${pathname === "/about" ? "active" : ""}`}
+        >
           {" "}
           _about-me{" "}
         </Link>
-        <Link href={"/projects"} className={`nav-link-mobile ${pathname === '/projects' ? 'active' : ''}`}>
+        <Link
+          href={"/projects"}
+          className={`nav-link-mobile ${
+            pathname === "/projects" ? "active" : ""
+          }`}
+        >
           {" "}
           _projects{" "}
         </Link>
-        <Link href={"/contact-me"} className={`nav-link-mobile ${pathname === '/contact-me' ? 'active' : ''}`}>
+        <Link
+          href={"/contact-me"}
+          className={`nav-link-mobile ${
+            pathname === "/contact-me" ? "active" : ""
+          }`}
+        >
           _contact-me
         </Link>
       </div>
